@@ -32,8 +32,12 @@
     .note {
         width: 45%;
     }
+    .editCreateDiv {
+        padding: 10% 0;
+    }
     .editCreateDiv form {
         width: 80%;
+        padding:3% 5%;
     }
 }
 @media screen and (max-width:600px){
@@ -62,7 +66,11 @@
     .note {
         width: 95%;
     }
+    .editCreateDiv {
+        padding: 20% 0;
+    }
     .editCreateDiv form {
         width: 95%;
+        padding: 10% 5%;
     }
 }

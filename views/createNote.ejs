@@ -3,7 +3,7 @@
 <!-- <%-include("partials/navigation.ejs")-%> -->
 <div class="editCreateDiv">
     <form action="/profile/<%=userProfileId%>/post" method="post">
-        <h1>Create New Note</h1>
+        <h1><%=pageName%></h1>
         <label>Title</label>
         <input type="text" name="noteTitle" id="noteTitle" placeholder="Enter note title" value="<%=noteInfo.title%>" required>
         <label>Content</label>
@@ -11,7 +11,7 @@
         <div class="formOptions">
             <input type="hidden" name="noteId" value="<%=noteInfo._id%>">
             <!-- <input type="reset" value="Clear" class="reset"> -->
-            <a href="/profile/<%=userProfileId%>" class="specialLink" style="padding: 0 15px 0  0">Cancel</a>
+            <a href="/profile/<%=userProfileId%>" class="specialLinkAlt">Cancel</a>
             <input type="submit" value="Save & Close" class="save">
         </div>
     </form>

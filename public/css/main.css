@@ -29,8 +29,8 @@
 }
 body {
     font-family: outfit;
-    width: 100%;
     background-color: var(--form-white);
+    width: 100%;
 }
 .navBar {
     width: 100%;
@@ -95,8 +95,8 @@ a {
     font-family: var(--font-primary);
 }
 .logoutBtn:hover {
-    background-color: var(--secondary);
-    color: black;
+    background-color: var(--alert);
+    color: var(--white);
 }
 .body {
     font-family: outfit;
@@ -108,20 +108,20 @@ a {
     background-color: var(--form-white);
 }
 .body .profile {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
-    padding: 25px 0 ;
+    padding:  2% 5% ;
     justify-content: space-between;
 }
 .body .profile h1 {
-    font-size: 2rem;
+    font-size: var(--font-large);
     color: var(--black);
     font-family: var(--font-secondary);
 }
 .body section {
-    margin:0 auto;
-    width: 90%;
+    padding: 0 5%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -157,14 +157,17 @@ a {
     color: var(--neutral);
     margin: 0 5px;
     transition: 0.3s;
-    border: none;
-    border: 2px solid var(--warn-alt);
-    background-color: transparent;
     outline: none;
-    border-radius: var(--border-radius);
+    background-color: transparent;
+    border: 2px solid transparent;
 }
-.options input:hover {
-    border: 2px solid var(--neutral);
+.options .editBtn:hover {
+    color: var(--form-accent);
+    border: 2px solid var(--form-accent);
+}
+.options .delBtn:hover {
+    color: var(--alert);
+    border: 2px solid var(--alert);
 }
 .createBtnDiv {
     position: fixed;
@@ -177,6 +180,9 @@ a {
     font-size: var(--font-large);
     color: var(--white);
     border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    outline: none;
+    border: none;
     transition: 0.3s;
 }
 .createBtnDiv .createBtn:hover {
@@ -189,7 +195,7 @@ a {
     top: 0;
     z-index: 999;
     width: 100%;
-    padding: 15% 0;
+    padding: 5% 0;
     /* backdrop-filter: blur(5px); */
     background-color: var(--form-white);
     display: flex;
@@ -204,7 +210,7 @@ a {
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    padding: 10% 5%;
+    padding:3% 2%;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
 }
@@ -212,7 +218,7 @@ form label {
     padding: 25px 0 5px 0;
 }
 form input,textarea {
-    padding: 8px 15px;
+    padding: 8px 16px;
     outline: none;
     border: 2px solid var(--secondary);
     font-family: outfit;
@@ -240,7 +246,7 @@ form textarea {
     cursor: pointer;
 }
 .formOptions .save {
-    border: 2px solid var(--black);
+    border: none;
     background-color: var(--black);
     color: var(--white);
     margin-left: 7px;
@@ -248,7 +254,6 @@ form textarea {
     transition: 0.3s;
 }
 .formOptions .save:hover {
-    border: 2px solid var(--secondary);
     background-color: var(--secondary);
     color: #000;
 }
@@ -334,7 +339,7 @@ form textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6% 0;
+    padding: 5% 0;
 }
 .form-container form {
     box-shadow: var(--box-shadow);
@@ -355,7 +360,7 @@ form textarea {
 }
 .form-container input {
     width: 85%;
-    padding: 10px 15px;
+    padding: 8px 16px;
     border: 2px solid var(--secondary);
     background: var(--form-white);
     outline: none;
@@ -370,7 +375,7 @@ form textarea {
 }
 .form-container .submitBtn {
     width: 85%;
-    padding: 12px 0;
+    padding: 8px 0;
     border:none;
     outline: none;
     background: var(--black);
@@ -403,4 +408,17 @@ form textarea {
 }
 .specialLink:hover {
     text-decoration: underline;
+}
+.specialLinkAlt {
+    color: black;
+    transition: 0.3s;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    background-color: var(--warn);
+}
+.specialLinkAlt:hover {
+    background-color: var(--secondary);
+}
+span {
+    color: var(--form-accent);
 }

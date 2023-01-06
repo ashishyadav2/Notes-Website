@@ -24,7 +24,16 @@ app.use(express.static("public"));
 const PORT = process.env.PORT || 3000;
 const URI = process.env.URI;
 mongoose.set('strictQuery',true);
-mongoose.connect(URI);
+mongoose.connect(URI,(err)=>{
+    if(!err) {
+        app.listen(PORT,()=>{
+            console.log(`Server is running at port ${PORT}`); 
+        });
+    }
+    else {
+        console.log(err);
+    }
+});
 
 
 const noteSchema = new mongoose.Schema({
@@ -87,7 +96,7 @@ app.post("/profile/:profileId/create",(req,res)=>{
         content: ""
     }
     const profileId = req.params.profileId;
-    res.render("createNote",{noteInfo: noteInfo,userProfileId:profileId});
+    res.render("createNote",{noteInfo: noteInfo,userProfileId:profileId,pageName: "Create New Post"});
 });
 
 app.post("/profile/:profileId/post",(req,res)=>{
@@ -130,7 +139,7 @@ app.post("/profile/:profileId/edit",(req,res)=>{
     MultipleUser.findOne({notesList : {$elemMatch: {_id: editId}}},{notesList : {$elemMatch: {_id: editId}}},(err,result)=>{
         if(!err) {
             if(result) {
-                res.render("createNote",{noteInfo: result.notesList[0],userProfileId:userName});
+                res.render("createNote",{noteInfo: result.notesList[0],userProfileId:userName,pageName: "Edit Note"});
             }
         }
         else {
@@ -224,8 +233,4 @@ app.get("*",(req,res)=>{
 });
 app.use((req,res,next)=>{
     res.status(404).render("index");
-});
-
-app.listen(PORT,()=>{
-    console.log(`Server is running at port ${PORT}`); 
 });
