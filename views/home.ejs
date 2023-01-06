@@ -1,0 +1,55 @@
+<%-include("partials/header.ejs")-%>
+<body>
+    <nav class="navBar">
+        <div class="logo">
+            <a href=""><img src="/images/favicon.png" alt="Logo Image"></a>
+        </div>
+        <p>Notes Website</p>
+        <div class="navLinks">
+            <div class="links">
+                <ul class="linkUl">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="actionBtn">
+                <a href="/logout"><button class="logoutBtn btn">Logout</button></a>
+            </div>
+        </div>
+    </nav>
+    <div class="body">
+        <div class="profile">
+            <h1>Hello user, <%=userProfileId%>. <%=text%></h1>
+        </div>
+        <section>
+            <% noteListArray.forEach((note)=> { %>
+                <div class="note">
+                    <div class="noteTitle">
+                        <p><%=note.title%></p>
+                    </div>
+                    <div class="noteContent">
+                        <p><%=note.content%></p>
+                    </div>
+                    <div class="options">
+                        <form action="/profile/<%=userProfileId%>/edit" method="post">
+                            <input type="hidden" name="editNoteId" value="<%=note._id%>">
+                            <input type="submit" value="Edit" class="editBtn btn"></input>
+                        </form>
+                        <form action="/profile/<%=userProfileId%>/delete" method="post">
+                            <input type="hidden" name="delNoteId" value="<%=note._id%>">
+                            <input type="submit" value="Delete" class="delBtn btn">
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        </section>
+        <div class="createBtnDiv">
+            <form action="/profile/<%=userProfileId%>/create" method="post">
+                <input type="hidden" name="userProfileId" value="<%=userProfileId%>">
+                <input type="submit" class="createBtn btn" value="+">
+            </form>
+        </div>
+    </div>
+</body>
+<%-include("partials/footer.ejs")-%>

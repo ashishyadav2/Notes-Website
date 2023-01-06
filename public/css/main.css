@@ -1,0 +1,406 @@
+:root {
+    --primary: #A0E4CB;
+    --secondary: #BAD7E9;
+    --white: #fff;
+    --black: #304D75;
+    --acc-1: #F9F7F7;
+    --acc-2: #DBE2EF;
+    --font-normal: 1rem;
+    --font-large: 1.5rem;
+    --border-radius: 10px;
+    --box-shadow: 0 10px 15px -5px rgba(0,0,0,0.25);
+    --font-primary: Outfit;
+    --font-secondary: Righteous;
+    --alert: #F67280;
+    --success: #1FAB89;
+    --warn: #FFC107;
+    --neutral: #0D47A1;
+    --warn-alt: #FFF9C4;
+    --form-accent : #2962FF;
+    --form-secondary : #1DE9B6;
+    --form-white  : #f3f5f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+}
+body {
+    font-family: outfit;
+    width: 100%;
+    background-color: var(--form-white);
+}
+.navBar {
+    width: 100%;
+    padding: 12px 25px;
+    background-color: var(--white);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    z-index: 99;
+}
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+.navLinks {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.links {
+    display: none;
+    padding: 0 25px 0 0;
+}
+.linkUl {
+    list-style-type: none;
+    display: flex;
+}
+.linkUl li{
+    margin: 0 2px;
+    text-transform: capitalize;
+}
+.linkUl li a{
+    color: var(--black);
+    transition: 0.3s;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+}
+.linkUl li a:hover{
+    background-color: var(--acc-2);
+}
+a {
+    text-decoration: none;
+}
+.btn {
+    border:none;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.logoutBtn {
+    padding: 8px 16px;
+    background-color: var(--black);
+    color: var(--white);
+    transition: 0.3s;
+    border-radius: var(--border-radius);
+    font-size: var(--font-normal);
+    font-family: var(--font-primary);
+}
+.logoutBtn:hover {
+    background-color: var(--secondary);
+    color: black;
+}
+.body {
+    font-family: outfit;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--form-white);
+}
+.body .profile {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    padding: 25px 0 ;
+    justify-content: space-between;
+}
+.body .profile h1 {
+    font-size: 2rem;
+    color: var(--black);
+    font-family: var(--font-secondary);
+}
+.body section {
+    margin:0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.note {
+    width: 30%;
+    background-color: var(--warn-alt);
+    border-bottom: 5px solid var(--warn);
+    padding: 0 25px;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+.noteTitle {
+    font-size: var(--font-large);
+    padding: 25px 0 5px 0;
+    border-bottom: 3px solid var(--neutral);
+}
+.noteContent {
+    font-size: var(--font-normal);
+    padding: 25px 0;
+    word-break: break-all;
+}
+.options {
+    padding: 0 0 15px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.options input {
+    color: var(--neutral);
+    margin: 0 5px;
+    transition: 0.3s;
+    border: none;
+    border: 2px solid var(--warn-alt);
+    background-color: transparent;
+    outline: none;
+    border-radius: var(--border-radius);
+}
+.options input:hover {
+    border: 2px solid var(--neutral);
+}
+.createBtnDiv {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+}
+.createBtnDiv .createBtn {
+    padding: 13px 22px ;
+    background-color: var(--black);
+    font-size: var(--font-large);
+    color: var(--white);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.createBtnDiv .createBtn:hover {
+    background-color: var(--secondary);
+    color: #000;
+}
+.editCreateDiv {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 15% 0;
+    /* backdrop-filter: blur(5px); */
+    background-color: var(--form-white);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.editCreateDiv h1{
+    color: var(--black);
+}
+.editCreateDiv form {
+    width: 70%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 10% 5%;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+form label {
+    padding: 25px 0 5px 0;
+}
+form input,textarea {
+    padding: 8px 15px;
+    outline: none;
+    border: 2px solid var(--secondary);
+    font-family: outfit;
+    border-radius: var(--border-radius);
+    font-size: var(--font-normal);
+    background-color: var(--form-white);
+}
+form input:focus,textarea:focus {
+    border: 2px solid var(--black);
+}
+form textarea {
+    resize: none;
+}
+.formOptions {
+    margin: 25px 0 0 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.formOptions .reset {
+    border: 2px solid var(--neutral);
+    background-color: transparent;
+    color: var(--neutral);
+    margin-right: 7px;
+    cursor: pointer;
+}
+.formOptions .save {
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: var(--white);
+    margin-left: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.formOptions .save:hover {
+    border: 2px solid var(--secondary);
+    background-color: var(--secondary);
+    color: #000;
+}
+.container {
+    width: 100%;
+    background: var(--);
+    background-size: cover;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 5%;
+}
+.container .banner {
+    width: 50%;
+    padding: 5% 0;
+    border-radius: var(--border-radius);
+    background:var(--white);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .banner p{
+    width: 85%;
+    font-size: var(--font-large);
+}
+.container .rightDiv {
+    width: 48%;
+    height: 75%;
+    padding: 5% 5%;
+    background-color: var(--black);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container .rightDiv h1{
+    font-size: 3rem;
+    font-family: var(--font-secondary);
+    color: var(--white);
+    padding: 0 0 10% 0;
+}
+.container .rightDiv p{
+    font-size:var(--font-large);
+    color: var(--white);
+}
+.container .btnDiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 100px auto 0 auto;
+    align-self: flex-end;
+}
+.container .btnDiv button {
+    font-family: outfit;
+    font-size: var(--font-normal);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    margin: 0 0 0 35px;
+}
+.container .btnDiv .loginBtn {
+    background-color: var(--white);
+    color: #000;
+    transition: 0.3s;
+}
+.container .btnDiv .regBtn {
+    background-color: var(--primary);
+    color: #000;
+    transition: 0.3s;
+}
+.container .btnDiv .loginBtn:hover {
+    background-color: var(--secondary);
+    color: #000;
+}
+.container .btnDiv .regBtn:hover {
+    background-color: var(--secondary);
+    color: #000;
+}
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6% 0;
+}
+.form-container form {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background: #fff;
+    display: flex;
+    padding: 4% 1%;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form-container form h1 {
+    font-size: 5rem;
+    color:var(--black);
+    font-family: righteous;
+    margin: 0 0 50px 0;
+}
+.form-container input {
+    width: 85%;
+    padding: 10px 15px;
+    border: 2px solid var(--secondary);
+    background: var(--form-white);
+    outline: none;
+    margin-bottom: 25px;
+    font-size: 1.01rem;
+    border-radius: var(--border-radius);
+}
+.form-container label {
+    width: 85%;
+    padding: 0 0 10px 5px;
+    font-size: 1.1rem;
+}
+.form-container .submitBtn {
+    width: 85%;
+    padding: 12px 0;
+    border:none;
+    outline: none;
+    background: var(--black);
+    color:var(--form-white);
+    font-size:1.1rem;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form-container .submitBtn:hover {
+    background: var(--secondary);
+    color: #000;
+}
+.messageBox {
+    padding: 25px 30px;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    font-size: var(--font-normal);
+    position: absolute;
+    bottom: 50px;
+}
+.messageBox#error{
+    background-color: var(--alert);
+    color: var(--white);
+    display: none;
+}
+.specialLink {
+    color: var(--black);
+    transition: 0.3s;
+}
+.specialLink:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+<%-include("partials/header.ejs")-%>
+<body>
+<nav class="navBar">
+    <div class="logo">
+        <a href="/"><img src="/images/favicon.png" alt="Logo Image"></a>
+    </div>
+    <div class="navLinks">
+        <div class="links">
+            <ul class="linkUl">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="actionBtn">
+            <!-- <a href=""><button class="logoutBtn btn">Logout</button></a> -->
+        </div>
+    </div>
+    <p>Notes Website</p>
+</nav>
+    <div class="form-container">
+        <form action="/login" method="post">
+            <h1>Login</h1>
+
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <input type="submit" value="Login" class="btn submitBtn">
+            <p>Not registtered? <a href="/register" class="specialLink">Register now</a></p>        
+        </form>
+    </div>
+</body>
+<%-include("partials/footer.ejs")-%>

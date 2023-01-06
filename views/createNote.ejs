@@ -1,0 +1,41 @@
+<%-include("partials/header.ejs")-%>
+<body>
+<!-- <%-include("partials/navigation.ejs")-%> -->
+<div class="editCreateDiv">
+    <form action="/profile/<%=userProfileId%>/post" method="post">
+        <h1>Create New Note</h1>
+        <label>Title</label>
+        <input type="text" name="noteTitle" id="noteTitle" placeholder="Enter note title" value="<%=noteInfo.title%>" required>
+        <label>Content</label>
+        <textarea name="noteContent" id="noteContent" cols="30" rows="10" placeholder="Enter note content" required><%=noteInfo.content%></textarea>
+        <div class="formOptions">
+            <input type="hidden" name="noteId" value="<%=noteInfo._id%>">
+            <!-- <input type="reset" value="Clear" class="reset"> -->
+            <a href="/profile/<%=userProfileId%>" class="specialLink" style="padding: 0 15px 0  0">Cancel</a>
+            <input type="submit" value="Save & Close" class="save">
+        </div>
+    </form>
+</div>
+<script>
+    let noteTitle = document.querySelector("#noteTitle");
+    let noteContent = document.querySelector("#noteContent");
+    // let resetBtn = document.querySelector(".reset");
+    function clearBox() {
+        if(noteContent.textContent == "Enter content" || noteContent.textContent == "Enter title") {
+            noteContent.textContent = "";
+            noteTitle.value = "";
+        }
+        else {
+            noteTitle.value = "<%=noteInfo.title%>";
+            noteContent.textContent = "<%=noteInfo.content%>";
+        }
+    }
+    // function clearBox1() {
+    //     noteContent.textContent = "";
+    //     noteTitle.value = "";
+    // }
+    window.addEventListener("load",clearBox);
+    // resetBtn.addEventListener("click",clearBox1);
+</script>
+</body>
+<%-include("partials/footer.ejs")-%>
