@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Righteous&display=swap');
 :root {
     --primary: #A0E4CB;
     --secondary: #BAD7E9;
@@ -9,8 +10,8 @@
     --font-large: 1.5rem;
     --border-radius: 10px;
     --box-shadow: 0 10px 15px -5px rgba(0,0,0,0.25);
-    --font-primary: Outfit;
-    --font-secondary: Righteous;
+    --font-primary: 'Outfit', sans-serif;
+    --font-secondary: 'Righteous', cursive;
     --alert: #F67280;
     --success: #1FAB89;
     --warn: #FFC107;
@@ -28,7 +29,7 @@
     /* border: 1px solid #000; */
 }
 body {
-    font-family: outfit;
+    font-family: 'Outfit', sans-serif;
     background-color: var(--form-white);
     width: 100%;
 }
@@ -99,7 +100,7 @@ a {
     color: var(--white);
 }
 .body {
-    font-family: outfit;
+    font-family: 'Outfit', sans-serif;
     width: 100%;
     height: 100%;
     padding: 100px 0;
@@ -221,7 +222,7 @@ form input,textarea {
     padding: 8px 16px;
     outline: none;
     border: 2px solid var(--secondary);
-    font-family: outfit;
+    font-family: 'Outfit', sans-serif;
     border-radius: var(--border-radius);
     font-size: var(--font-normal);
     background-color: var(--form-white);
@@ -310,7 +311,7 @@ form textarea {
     align-self: flex-end;
 }
 .container .btnDiv button {
-    font-family: outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: var(--font-normal);
     padding: 8px 16px;
     border-radius: var(--border-radius);
@@ -355,7 +356,7 @@ form textarea {
 .form-container form h1 {
     font-size: 5rem;
     color:var(--black);
-    font-family: righteous;
+    font-family: 'Righteous', cursive;
     margin: 0 0 50px 0;
 }
 .form-container input {
