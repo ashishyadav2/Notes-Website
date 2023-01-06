@@ -29,7 +29,7 @@
                         <p><%=note.title%></p>
                     </div>
                     <div class="noteContent">
-                        <p><%=note.content%></p>
+                        <textarea class="noteContentTextArea" readonly><%=note.content%></textarea>
                     </div>
                     <div class="options">
                         <form action="/profile/<%=userProfileId%>/edit" method="post">
@@ -51,5 +51,15 @@
             </form>
         </div>
     </div>
+    <script>
+        var noteContentTextArea = document.querySelectorAll(".noteContentTextArea");
+        for(let i=0;i<noteContentTextArea.length;i++) {
+            textAreaAdjust(noteContentTextArea[i]);
+        }
+        function textAreaAdjust(element) {
+            element.style.height = "1px";
+            element.style.height = (1+element.scrollHeight)+"px";
+        }
+    </script>
 </body>
 <%-include("partials/footer.ejs")-%>
