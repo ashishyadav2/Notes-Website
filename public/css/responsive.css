@@ -1,76 +1,133 @@
-@media screen and (max-width:1000px){
-    .container {
-        padding: 20% 0;
-        flex-direction: column;
-        align-items: center;
-    }
-    .container .banner {
-        width: 90%;
-        margin: 0 0 5% 0;
-    }
-    .container .rightDiv {
-        width: 90%;
-    }
-    .container .banner p{
-        font-size: var(--font-normal);
-    }
-    .container .rightDiv h1{
-        font-size: 2rem;
-    }
-    .container .rightDiv p{
-        font-size:var(--font-normal);
-    }
-    .form-container {
-        padding: 30% 0;
-    }
-    .form-container form {
-        width: 70%;
-    }
-    .body .profile h1 {
-        font-size: 1.5rem;
-    }
-    .note {
-        width: 45%;
-    }
-    .editCreateDiv {
-        padding: 10% 0;
-    }
-    .editCreateDiv form {
-        width: 80%;
-        padding:3% 5%;
-    }
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 20% 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .banner {
+    width: 90%;
+    margin: 0 0 5% 0;
+  }
+  .container .rightDiv {
+    width: 90%;
+  }
+  .container .banner p {
+    font-size: var(--font-normal);
+  }
+  .container .rightDiv h1 {
+    font-size: 2rem;
+  }
+  .container .rightDiv p {
+    font-size: var(--font-normal);
+  }
+  .form-container {
+    padding: 30% 0;
+  }
+  .form-container form {
+    width: 70%;
+  }
+  .body .profile h1 {
+    font-size: 1.5rem;
+  }
+  .note {
+    width: 45%;
+  }
+  .editCreateDiv {
+    padding: 10% 0;
+  }
+  .editCreateDiv form {
+    width: 80%;
+    padding: 3% 5%;
+  }
 }
-@media screen and (max-width:600px){
-    .container .btnDiv {
-        justify-content: space-between;
-        margin: 10% auto 0 auto;
-    }
-    .container .btnDiv a {
-        width: 48%;
-    }
-    .container .btnDiv button {
-        margin: 0;
-        width: 100%;
-        border-radius: var(--border-radius);
-    }
-    .form-container {
-        padding: 30% 0;
-    }
-    .form-container form {
-        width: 95%;
-        padding: 15% 0;
-    }
-    .form-container form h1 {
-        font-size: 3rem;
-    }
-    .note {
-        width: 95%;
-    }
-    .editCreateDiv {
-        padding: 20% 0;
-    }
-    .editCreateDiv form {
-        width: 95%;
-        padding: 10% 5%;
-    }
+@media screen and (max-width: 600px) {
+  .container .btnDiv {
+    justify-content: space-between;
+    margin: 10% auto 0 auto;
+  }
+  .container .btnDiv a {
+    width: 48%;
+  }
+  .container .btnDiv button {
+    margin: 0;
+    width: 100%;
+    border-radius: var(--border-radius);
+  }
+  .form-container {
+    padding: 30% 0;
+  }
+  .form-container form {
+    width: 95%;
+    padding: 15% 0;
+  }
+  .form-container form h1 {
+    font-size: 3rem;
+  }
+  .note {
+    width: 95%;
+  }
+  .editCreateDiv {
+    padding: 20% 0;
+  }
+  .editCreateDiv form {
+    width: 95%;
+    padding: 10% 5%;
+  }
+}
+
+.noteContentTextArea,
+.noteContentTextArea:focus,
+.createBtnDiv .createBtn,
+.formOptions .save,
+.form-container .submitBtn,
+.btn {
+  border: none;
+}
+.noteContentTextArea,
+.noteContentTextArea:focus,
+.btn,
+.options input,
+.createBtnDiv .createBtn,
+form input,
+textarea,
+.form-container input,
+.form-container .submitBtn {
+  outline: none;
+}
+.noteContentTextArea,
+body,
+.navBar,
+.body,
+.body .profile,
+.body section,
+.editCreateDiv,
+.container,
+.container .btnDiv,
+.form-container {
+  width: 100%;
+}
+.createBtnDiv .createBtn:hover,
+.formOptions .save:hover,
+.container .btnDiv .loginBtn,
+.container .btnDiv .regBtn,
+.container .btnDiv .loginBtn:hover,
+.container .btnDiv .regBtn:hover,
+.form-container .submitBtn:hover {
+  color: #000;
+}
+.linkUl li a,
+.logoutBtn,
+.note,
+.editCreateDiv form,
+form input,
+textarea,
+.container,
+.container .banner,
+.container .rightDiv,
+.container .btnDiv button,
+.form-container form,
+.form-container input,
+.messageBox,
+.specialLinkAlt {
+  border-radius: var(--border-radius);
 }

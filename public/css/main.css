@@ -1,440 +1,393 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit&family=Righteous&display=swap");
 :root {
-    --primary: #A0E4CB;
-    --secondary: #BAD7E9;
-    --white: #fff;
-    --black: #304D75;
-    --acc-1: #F9F7F7;
-    --acc-2: #DBE2EF;
-    --font-normal: 1rem;
-    --font-large: 1.5rem;
-    --border-radius: 10px;
-    --box-shadow: 0 10px 15px -5px rgba(0,0,0,0.25);
-    --font-primary: 'Outfit', sans-serif;
-    --font-secondary: 'Righteous', cursive;
-    --alert: #F67280;
-    --success: #1FAB89;
-    --warn: #FFC107;
-    --neutral: #0D47A1;
-    --warn-alt: #FFF9C4;
-    --form-accent : #2962FF;
-    --form-secondary : #1DE9B6;
-    --form-white  : #f3f5f7;
+  --primary: #a0e4cb;
+  --secondary: #bad7e9;
+  --white: #fff;
+  --black: #304d75;
+  --acc-1: #f9f7f7;
+  --acc-2: #dbe2ef;
+  --font-normal: 1rem;
+  --font-large: 1.5rem;
+  --border-radius: 10px;
+  --box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.25);
+  --font-primary: "Outfit", sans-serif;
+  --font-secondary: "Righteous", cursive;
+  --alert: #f67280;
+  --success: #1fab89;
+  --warn: #ffc107;
+  --neutral: #0d47a1;
+  --warn-alt: #fff9c4;
+  --form-accent: #2962ff;
+  --form-secondary: #1de9b6;
+  --form-white: #f3f5f7;
 }
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* border: 1px solid #000; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    font-family: 'Outfit', sans-serif;
-    background-color: var(--form-white);
-    width: 100%;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--form-white);
 }
 .navBar {
-    width: 100%;
-    padding: 12px 25px;
-    background-color: var(--white);
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--box-shadow);
-    z-index: 99;
+  padding: 12px 25px;
+  background-color: var(--white);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  z-index: 99;
 }
 .logo img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 .navLinks {
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .links {
-    display: none;
-    padding: 0 25px 0 0;
+  display: none;
+  padding: 0 25px 0 0;
 }
 .linkUl {
-    list-style-type: none;
-    display: flex;
+  list-style-type: none;
+  display: flex;
 }
-.linkUl li{
-    margin: 0 2px;
-    text-transform: capitalize;
+.linkUl li {
+  margin: 0 2px;
+  text-transform: capitalize;
 }
-.linkUl li a{
-    color: var(--black);
-    transition: 0.3s;
-    padding: 8px 16px;
-    border-radius: var(--border-radius);
+.linkUl li a {
+  color: var(--black);
+  transition: 0.3s;
+  padding: 8px 16px;
 }
-.linkUl li a:hover{
-    background-color: var(--acc-2);
+.linkUl li a:hover {
+  background-color: var(--acc-2);
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .btn {
-    border:none;
-    outline: none;
-    transition: 0.3s;
-    cursor: pointer;
+  transition: 0.3s;
+  cursor: pointer;
 }
 .logoutBtn {
-    padding: 8px 16px;
-    background-color: var(--black);
-    color: var(--white);
-    transition: 0.3s;
-    border-radius: var(--border-radius);
-    font-size: var(--font-normal);
-    font-family: var(--font-primary);
+  padding: 8px 16px;
+  background-color: var(--black);
+  color: var(--white);
+  transition: 0.3s;
+  font-size: var(--font-normal);
+  font-family: var(--font-primary);
 }
 .logoutBtn:hover {
-    background-color: var(--alert);
-    color: var(--white);
+  background-color: var(--alert);
+  color: var(--white);
 }
 .body {
-    font-family: 'Outfit', sans-serif;
-    width: 100%;
-    height: 100%;
-    padding: 100px 0;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--form-white);
+  font-family: "Outfit", sans-serif;
+  height: 100%;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--form-white);
 }
 .body .profile {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    padding:  2% 5% ;
-    justify-content: space-between;
+  margin: 0 auto;
+  display: flex;
+  padding: 2% 5%;
+  justify-content: space-between;
 }
 .body .profile h1 {
-    font-size: var(--font-large);
-    color: var(--black);
-    font-family: var(--font-secondary);
+  font-size: var(--font-large);
+  color: var(--black);
+  font-family: var(--font-secondary);
 }
 .body section {
-    padding: 0 5%;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  padding: 0 5%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .note {
-    width: 30%;
-    background-color: var(--warn-alt);
-    border-bottom: 5px solid var(--warn);
-    padding: 0 25px;
-    margin: 30px 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
+  width: 30%;
+  background-color: var(--warn-alt);
+  border-bottom: 5px solid var(--warn);
+  padding: 0 25px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
 }
 .noteTitle {
-    font-size: var(--font-large);
-    padding: 25px 0 5px 0;
-    border-bottom: 3px solid var(--neutral);
+  font-size: var(--font-large);
+  padding: 25px 0 5px 0;
+  border-bottom: 3px solid var(--neutral);
 }
 .noteContent {
-    font-size: var(--font-normal);
-    padding: 25px 0;
-    word-break: break-all;
+  font-size: var(--font-normal);
+  padding: 25px 0;
+  word-break: break-all;
 }
 .options {
-    padding: 0 0 15px 0;
-    display: flex;
-    justify-content: flex-end;
+  padding: 0 0 15px 0;
+  display: flex;
+  justify-content: flex-end;
 }
 .options input {
-    color: var(--neutral);
-    margin: 0 5px;
-    transition: 0.3s;
-    padding: 4px 12px;
-    outline: none;
-    background-color: transparent;
-    border: 2px solid transparent;
+  color: var(--neutral);
+  margin: 0 5px;
+  transition: 0.3s;
+  padding: 4px 12px;
+  background-color: transparent;
+  border: 2px solid transparent;
 }
 .options .editBtn:hover {
-    color: var(--form-accent);
-    border: 2px solid var(--form-accent);
+  color: var(--form-accent);
+  border: 2px solid var(--form-accent);
 }
 .options .delBtn:hover {
-    color: var(--alert);
-    border: 2px solid var(--alert);
+  color: var(--alert);
+  border: 2px solid var(--alert);
 }
 .createBtnDiv {
-    position: fixed;
-    right: 5%;
-    bottom: 5%;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
 }
 .createBtnDiv .createBtn {
-    padding: 13px 22px ;
-    background-color: var(--black);
-    font-size: var(--font-large);
-    color: var(--white);
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
-    outline: none;
-    border: none;
-    transition: 0.3s;
+  padding: 13px 22px;
+  background-color: var(--black);
+  font-size: var(--font-large);
+  color: var(--white);
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  transition: 0.3s;
 }
 .createBtnDiv .createBtn:hover {
-    background-color: var(--secondary);
-    color: #000;
+  background-color: var(--secondary);
 }
 .editCreateDiv {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    padding: 5% 0;
-    /* backdrop-filter: blur(5px); */
-    background-color: var(--form-white);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  padding: 5% 0;
+  background-color: var(--form-white);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-.editCreateDiv h1{
-    color: var(--black);
+.editCreateDiv h1 {
+  color: var(--black);
 }
 .editCreateDiv form {
-    width: 70%;
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
-    padding:3% 2%;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
+  width: 70%;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 3% 2%;
+  box-shadow: var(--box-shadow);
 }
 form label {
-    padding: 25px 0 5px 0;
+  padding: 25px 0 5px 0;
 }
-form input,textarea {
-    padding: 8px 16px;
-    outline: none;
-    border: 2px solid var(--secondary);
-    font-family: 'Outfit', sans-serif;
-    border-radius: var(--border-radius);
-    font-size: var(--font-normal);
-    background-color: var(--form-white);
+form input,
+textarea {
+  padding: 8px 16px;
+  border: 2px solid var(--secondary);
+  font-family: "Outfit", sans-serif;
+  font-size: var(--font-normal);
+  background-color: var(--form-white);
 }
-form input:focus,textarea:focus {
-    border: 2px solid var(--black);
+form input:focus,
+textarea:focus {
+  border: 2px solid var(--black);
 }
 form textarea {
-    resize: none;
+  resize: none;
 }
 .formOptions {
-    margin: 25px 0 0 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  margin: 25px 0 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .formOptions .reset {
-    border: 2px solid var(--neutral);
-    background-color: transparent;
-    color: var(--neutral);
-    margin-right: 7px;
-    cursor: pointer;
+  border: 2px solid var(--neutral);
+  background-color: transparent;
+  color: var(--neutral);
+  margin-right: 7px;
+  cursor: pointer;
 }
 .formOptions .save {
-    border: none;
-    background-color: var(--black);
-    color: var(--white);
-    margin-left: 7px;
-    cursor: pointer;
-    transition: 0.3s;
+  background-color: var(--black);
+  color: var(--white);
+  margin-left: 7px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .formOptions .save:hover {
-    background-color: var(--secondary);
-    color: #000;
+  background-color: var(--secondary);
 }
 .container {
-    width: 100%;
-    background: var(--);
-    background-size: cover;
-    border-radius: var(--border-radius);
-    display: flex;
-    justify-content: space-between;
-    padding: 10% 5%;
+  background: var(--);
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  padding: 10% 5%;
 }
 .container .banner {
-    width: 50%;
-    padding: 5% 0;
-    border-radius: var(--border-radius);
-    background:var(--white);
-    box-shadow: var(--box-shadow);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50%;
+  padding: 5% 0;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container .banner p{
-    width: 85%;
-    font-size: var(--font-large);
+.container .banner p {
+  width: 85%;
+  font-size: var(--font-large);
 }
 .container .rightDiv {
-    width: 48%;
-    height: 75%;
-    padding: 5% 5%;
-    background-color: var(--black);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 48%;
+  height: 75%;
+  padding: 5% 5%;
+  background-color: var(--black);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.container .rightDiv h1{
-    font-size: 3rem;
-    font-family: var(--font-secondary);
-    color: var(--white);
-    padding: 0 0 10% 0;
+.container .rightDiv h1 {
+  font-size: 3rem;
+  font-family: var(--font-secondary);
+  color: var(--white);
+  padding: 0 0 10% 0;
 }
-.container .rightDiv p{
-    font-size:var(--font-large);
-    color: var(--white);
+.container .rightDiv p {
+  font-size: var(--font-large);
+  color: var(--white);
 }
 .container .btnDiv {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 100px auto 0 auto;
-    align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 100px auto 0 auto;
+  align-self: flex-end;
 }
 .container .btnDiv button {
-    font-family: 'Outfit', sans-serif;
-    font-size: var(--font-normal);
-    padding: 8px 16px;
-    border-radius: var(--border-radius);
-    margin: 0 0 0 35px;
+  font-family: "Outfit", sans-serif;
+  font-size: var(--font-normal);
+  padding: 8px 16px;
+  margin: 0 0 0 35px;
 }
 .container .btnDiv .loginBtn {
-    background-color: var(--white);
-    color: #000;
-    transition: 0.3s;
+  background-color: var(--white);
+  transition: 0.3s;
 }
 .container .btnDiv .regBtn {
-    background-color: var(--primary);
-    color: #000;
-    transition: 0.3s;
+  background-color: var(--primary);
+  transition: 0.3s;
 }
 .container .btnDiv .loginBtn:hover {
-    background-color: var(--secondary);
-    color: #000;
+  background-color: var(--secondary);
 }
 .container .btnDiv .regBtn:hover {
-    background-color: var(--secondary);
-    color: #000;
+  background-color: var(--secondary);
 }
 .form-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 0;
 }
 .form-container form {
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    background: #fff;
-    display: flex;
-    padding: 4% 1%;
-    width: 30%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  box-shadow: var(--box-shadow);
+  background: #fff;
+  display: flex;
+  padding: 4% 1%;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .form-container form h1 {
-    font-size: 5rem;
-    color:var(--black);
-    font-family: 'Righteous', cursive;
-    margin: 0 0 50px 0;
+  font-size: 5rem;
+  color: var(--black);
+  font-family: "Righteous", cursive;
+  margin: 0 0 50px 0;
 }
 .form-container input {
-    width: 85%;
-    padding: 8px 16px;
-    border: 2px solid var(--secondary);
-    background: var(--form-white);
-    outline: none;
-    margin-bottom: 25px;
-    font-size: 1.01rem;
-    border-radius: var(--border-radius);
+  width: 85%;
+  padding: 8px 16px;
+  border: 2px solid var(--secondary);
+  background: var(--form-white);
+  margin-bottom: 25px;
+  font-size: 1.01rem;
 }
 .form-container label {
-    width: 85%;
-    padding: 0 0 10px 5px;
-    font-size: 1.1rem;
+  width: 85%;
+  padding: 0 0 10px 5px;
+  font-size: 1.1rem;
 }
 .form-container .submitBtn {
-    width: 85%;
-    padding: 8px 0;
-    border:none;
-    outline: none;
-    background: var(--black);
-    color:var(--form-white);
-    font-size:1.1rem;
-    margin-top: 25px;
-    cursor: pointer;
-    transition: 0.3s;
+  width: 85%;
+  padding: 8px 0;
+  background: var(--black);
+  color: var(--form-white);
+  font-size: 1.1rem;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .form-container .submitBtn:hover {
-    background: var(--secondary);
-    color: #000;
+  background: var(--secondary);
 }
 .messageBox {
-    padding: 25px 30px;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    font-size: var(--font-normal);
-    position: absolute;
-    bottom: 50px;
+  padding: 25px 30px;
+  box-shadow: var(--box-shadow);
+  font-size: var(--font-normal);
+  position: absolute;
+  bottom: 50px;
 }
-.messageBox#error{
-    background-color: var(--alert);
-    color: var(--white);
-    display: none;
+.messageBox#error {
+  background-color: var(--alert);
+  color: var(--white);
+  display: none;
 }
 .specialLink {
-    color: var(--black);
-    transition: 0.3s;
+  color: var(--black);
+  transition: 0.3s;
 }
 .specialLink:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .specialLinkAlt {
-    color: black;
-    transition: 0.3s;
-    padding: 8px 16px;
-    border-radius: var(--border-radius);
-    background-color: var(--warn);
+  color: black;
+  transition: 0.3s;
+  padding: 8px 16px;
+  background-color: var(--warn);
 }
 .specialLinkAlt:hover {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 span {
-    color: var(--form-accent);
+  color: var(--form-accent);
 }
 .noteContentTextArea {
-    width: 100%;
-    font-family: var(--font-primary);
-    resize: none;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    margin: 0;
-    overflow: hidden;
-}
-.noteContentTextArea:focus {
-    outline: none;
-    border: none;
+  font-family: var(--font-primary);
+  resize: none;
+  background-color: transparent;
+  margin: 0;
+  overflow: hidden;
 }
