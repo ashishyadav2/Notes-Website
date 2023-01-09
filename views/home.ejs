@@ -45,7 +45,7 @@
             <% }); %>
         </section>
         <div class="createBtnDiv">
-            <form action="/profile/<%=userProfileId%>/create" method="post">
+            <form action="/profile/<%=userProfileId%>/create" method="post" id="createForm">
                 <input type="hidden" name="userProfileId" value="<%=userProfileId%>">
                 <input type="submit" class="createBtn btn" value="+">
             </form>
@@ -60,6 +60,12 @@
             element.style.height = "1px";
             element.style.height = (1+element.scrollHeight)+"px";
         }
+        var createForm = document.getElementById("createForm");
+        document.body.addEventListener("keydown",(e)=>{
+            if((e.keyCode==107)||(e.keyCode == 61 && e.shiftKey)) {
+                createForm.submit();
+            }
+        });
     </script>
 </body>
 <%-include("partials/footer.ejs")-%>
