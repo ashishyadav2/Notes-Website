@@ -62,7 +62,7 @@
         }
         var createForm = document.getElementById("createForm");
         document.body.addEventListener("keydown",(e)=>{
-            if((e.keyCode==107)||(e.keyCode == 61 && e.shiftKey)) {
+            if((e.keyCode==107)||(e.keyCode === 187  && e.shiftKey)) {
                 createForm.submit();
             }
         });
