@@ -31,6 +31,7 @@
   }
   .note {
     width: 45%;
+    padding: 0 2%;
   }
   .editCreateDiv {
     padding: 10% 0;
@@ -60,11 +61,15 @@
     width: 95%;
     padding: 15% 0;
   }
+  .body section {
+    padding: 0 2%;
+  }
   .form-container form h1 {
     font-size: 3rem;
   }
   .note {
     width: 100%;
+    padding: 0 3%;
   }
   .editCreateDiv {
     padding: 20% 0;
