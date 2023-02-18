@@ -40,6 +40,13 @@
     width: 80%;
     padding: 3% 5%;
   }
+  .options {
+    justify-content: space-between;
+  }
+  .options input {
+    margin: 0 2px;
+    padding: 4px 4px;
+  }
 }
 @media screen and (max-width: 600px) {
   .container .btnDiv {
@@ -77,6 +84,11 @@
   .editCreateDiv form {
     width: 95%;
     padding: 10% 5%;
+  }
+
+  .options input {
+    margin: 0 5px;
+    padding: 4px 12px;
   }
 }
 

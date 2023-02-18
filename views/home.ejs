@@ -29,9 +29,15 @@
                         <p><%=note.title%></p>
                     </div>
                     <div class="noteContent">
-                        <textarea class="noteContentTextArea" readonly><%=note.content%></textarea>
+                        <p class="noteContentTextArea" id="<%=note._id%>" readonly><%=note.content.length<150 ? note.content: note.content.substring(0,150)+"..."%></p>
                     </div>
                     <div class="options">
+                        <form action="" method="">
+                            <input type="button" value="Share" onclick="share('<%=note._id%>')" class="editBtn btn"></input>
+                        </form>
+                        <form action="" method="">
+                            <input type="button" value="Copy" onclick="copy('<%=note._id%>')" class="editBtn btn"></input>
+                        </form>
                         <form action="/profile/<%=userProfileId%>/edit" method="post">
                             <input type="hidden" name="editNoteId" value="<%=note._id%>">
                             <input type="submit" value="Edit" class="editBtn btn"></input>
@@ -54,18 +60,49 @@
     <script>
         var noteContentTextArea = document.querySelectorAll(".noteContentTextArea");
         for(let i=0;i<noteContentTextArea.length;i++) {
-            textAreaAdjust(noteContentTextArea[i]);
+            convertToLlink(noteContentTextArea[i]);
         }
-        function textAreaAdjust(element) {
-            element.style.height = "1px";
-            element.style.height = (1+element.scrollHeight)+"px";
-        }
+
         var createForm = document.getElementById("createForm");
         document.body.addEventListener("keydown",(e)=>{
             if((e.keyCode==107)||(e.keyCode === 187  && e.shiftKey)) {
                 createForm.submit();
             }
         });
+
+        function share(noteId) {
+            var noteContent = document.getElementById(noteId);
+            if(navigator.share) {
+                navigator.share({
+                    text: noteContent.textContent
+                }).then(()=>{
+                    console.log("success");;
+                }).catch((err)=>{
+                    console.log(err);
+                });
+            }
+            else {
+                noteContent.style.display = "none";
+            }
+        }
+
+        function copy(noteId) {
+            var noteContent = document.getElementById(noteId);
+            navigator.clipboard.writeText(noteContent.textContent).then(function() {
+            console.log('Text copied to clipboard');
+            }, function() {
+                console.log('Failed to copy text to clipboard');
+            });               
+        }
+
+        function convertToLlink(noteContent){
+            var regEx = /((?:https?|ftp):\/\/)?([a-z0-9-]+\.)+(?:[a-z]{2,})(?:[/\w\.-]*)*\/?(?:\?\S*)?/gi;
+            var text = noteContent.textContent;
+            noteContent.innerHTML = text.replace(regEx,(url)=> {
+                return '<a href="' + url + '" class= "specialLink">' + url + '</a>';
+            });
+        }
+
     </script>
 </body>
 <%-include("partials/footer.ejs")-%>
