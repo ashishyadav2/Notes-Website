@@ -41,10 +41,10 @@
     padding: 3% 5%;
   }
   .options {
-    justify-content: space-between;
+    justify-content: center;
   }
   .options input {
-    margin: 0 2px;
+    margin:  5px;
     padding: 4px 4px;
   }
 }
@@ -87,7 +87,7 @@
   }
 
   .options input {
-    margin: 0 5px;
+    margin: 5px;
     padding: 4px 12px;
   }
 }

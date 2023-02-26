@@ -29,14 +29,19 @@
                         <p><%=note.title%></p>
                     </div>
                     <div class="noteContent">
-                        <p class="noteContentTextArea" id="<%=note._id%>" readonly><%=note.content%></p>
+                        <p class="noteContentTextArea <%=note._id%>" readonly><%=note.content.length > 256 ? note.content.substring(0,256)+"...":note.content%></p>
+                        <p class="noteContentTextAreaExpanded" readonly><%=note.content%></p>
+                        <input type="hidden" name="hidden_content" id="<%=note._id%>" value="<%=note.content%>">
                     </div>
                     <div class="options">
+                        <form action="" method="">
+                            <input type="button" value="Expand" onclick="showHide('<%=note._id%>')" class="editBtn btn"></input>
+                        </form>
                         <form action="" method="">
                             <input type="button" value="Share" onclick="share('<%=note._id%>')" class="editBtn btn"></input>
                         </form>
                         <form action="" method="">
-                            <input type="button" value="Copy" onclick="copy('<%=note._id%>')" class="editBtn btn"></input>
+                            <input type="button" value="Copy" onclick='copy("<%=note._id%>")' class="editBtn btn"></input>
                         </form>
                         <form action="/profile/<%=userProfileId%>/edit" method="post">
                             <input type="hidden" name="editNoteId" value="<%=note._id%>">
@@ -59,8 +64,10 @@
     </div>
     <script>
         var noteContentTextArea = document.querySelectorAll(".noteContentTextArea");
+        var noteContentTextAreaExpanded = document.querySelectorAll(".noteContentTextAreaExpanded");
         for(let i=0;i<noteContentTextArea.length;i++) {
             convertToLlink(noteContentTextArea[i]);
+            convertToLlink(noteContentTextAreaExpanded[i]);
         }
 
         var createForm = document.getElementById("createForm");
@@ -74,9 +81,9 @@
             var noteContent = document.getElementById(noteId);
             if(navigator.share) {
                 navigator.share({
-                    text: noteContent.textContent
+                    text: noteContent.value
                 }).then(()=>{
-                    console.log("success");;
+                    console.log("Success");;
                 }).catch((err)=>{
                     console.log(err);
                 });
@@ -86,9 +93,21 @@
             }
         }
 
+        function showHide(noteId) {
+            let elem = document.getElementsByClassName(noteId)[0];
+            let next = elem.nextElementSibling;
+            if(next.style.display==="block"&&elem.style.display === "none") {
+                next.style.display = "none";
+                elem.style.display = "block";
+            }
+            else {
+                next.style.display = "block";
+                elem.style.display = "none";                
+            }
+        }
         function copy(noteId) {
-            var noteContent = document.getElementById(noteId);
-            navigator.clipboard.writeText(noteContent.textContent).then(function() {
+            var noteContentTextAreaInput = document.getElementById(noteId);
+            navigator.clipboard.writeText(noteContentTextAreaInput.value).then(function() {
             console.log('Text copied to clipboard');
             }, function() {
                 console.log('Failed to copy text to clipboard');

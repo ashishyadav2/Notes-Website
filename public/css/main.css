@@ -115,10 +115,10 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 .note {
   width: 30%;
-  max-height: 50vh;
   background-color: var(--warn-alt);
   border-bottom: 5px solid var(--warn);
   padding: 0 1%;  
@@ -127,6 +127,9 @@ a {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: var(--box-shadow);
+}
+.note_expanded {
+  
 }
 .noteTitle {
   font-size: var(--font-large);
@@ -141,15 +144,16 @@ a {
 .options {
   padding: 0 0 15px 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .options input {
   color: var(--neutral);
-  margin: 0 5px;
+  margin: 5px;
   transition: 0.3s;
   padding: 4px 12px;
   background-color: transparent;
-  border: 2px solid transparent;
+  border: 2px solid var(--warn);
 }
 .options .editBtn:hover {
   color: var(--form-accent);
@@ -387,6 +391,11 @@ span {
   color: var(--form-accent);
 }
 .noteContentTextArea {
+  white-space: pre-wrap;
+  overflow-y: hidden;
+}
+.noteContentTextAreaExpanded {
+  display: none;
   white-space: pre-wrap;
   overflow-y: hidden;
 }
